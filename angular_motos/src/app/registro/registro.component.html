@@ -1,0 +1,58 @@
+<h1 class="my-4">Completa para registrarse</h1>
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class=" px-4 py-3 ">
+        <div class="mb-3 ">
+            <label class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" formControlName="name">
+            <p class="error" *ngIf="checkError('name', 'required')">El campo Nombre es requerido</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Nickname</label>
+            <input type="text" class="form-control" formControlName="nickname">
+            <p class="error" *ngIf="checkError('nickname', 'required')  ">El campo Nickname es requerido</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ciudad </label>
+            <input type="text" class="form-control" formControlName="city">
+            <p class="error" *ngIf="checkError('city', 'required')  ">El campo Ciudad es requerido</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Sobre mi </label>
+            <input type="text" class="form-control" placeholder="Escribe una breve descripcion sobre ti" formControlName="description">
+            <p class="error" *ngIf="checkError('description', 'required')  ">El campo Descripcion es requerido</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Edad </label>
+            <input type="number" class="form-control" formControlName="age">
+            <p class="error" *ngIf="checkError('age', 'required')  ">El campo Edad es requerido</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email </label>
+            <input type="text" class="form-control" formControlName="email">
+            <p class="error" *ngIf="checkError('email', 'required')  ">El campo Email es requerido</p>
+            <p class="error" *ngIf="checkError('email', 'pattern')  ">El campo Email no tiene un formato valido</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Imagen </label>
+            <input type="file" class="form-control" formControlName="img" name="imagen" (change)="onChange($event)">
+            <p class="error" *ngIf="checkError('img', 'required')  ">El campo Imagen es requerido</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Password </label>
+            <input type="password" class="form-control" formControlName="password">
+            <p class="error" *ngIf="checkError('password', 'required')  ">El campo Password es requerido</p>
+        </div>
+
+
+
+        <input type="submit" value="Registrarse" class="btn btn-dark" [disabled]="!formulario.valid">
+    </form>
+</div>
+<!-- type="button" class="btn btn-dark" -->

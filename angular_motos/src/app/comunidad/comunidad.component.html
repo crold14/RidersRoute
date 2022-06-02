@@ -1,0 +1,13 @@
+<div class="container">
+    <h1>Comunidad</h1>
+    <div class="comunidad">
+        <div class="usuario" *ngFor="let usuario of this.comunidad">
+            <h3>{{usuario.name}}</h3>
+            <p>{{usuario.city}}</p>
+            <p>Edad: {{usuario.age}} años</p>
+            <p>{{usuario.description}}</p>
+            <img [src]="'http://localhost:3000/images/' + usuario.img" alt="">
+            <!-- <img [src]="usuario.img" alt=""> -->
+        </div>
+    </div>
+</div>

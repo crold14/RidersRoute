@@ -1,0 +1,97 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#" [routerLink]="['/home']" routerLinkActive=" activo">Riders Routes</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/home']"
+              routerLinkActive=" activo">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" [routerLink]="['/rutas']" routerLinkActive=" activo">Rutas</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Eventos
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#" [routerLink]="['/newEvento']" routerLinkActive=" activo"
+                  *ngIf="login">Crear evento</a></li>
+              <li><a class="dropdown-item" href="#" [routerLink]="['/eventos']" routerLinkActive=" activo">Buscar
+                  evento</a></li>
+
+              <!--               <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" [routerLink]="['/comunidad']" routerLinkActive=" activo" *ngIf="login">Comunidad</a>
+          </li>
+
+
+        </ul>
+
+        <div class="login">
+          <!-- <i class="fa-solid fa-user-large"></i> -->
+          <li class="login nav-item dropdown" *ngIf="login">
+
+            <a class="login nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Mi perfil</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <li>
+
+                <a class="dropdown-item" href="#" [routerLink]="['/perfil']" routerLinkActive=" activo"> Mi perfil</a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li>
+                <a (click)="onClick()" class="dropdown-item" [routerLink]="['/login']" routerLinkActive=" activo">Log
+                  Out</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="nav-item">
+
+            <a class="nav-link active " [routerLink]="['/login']" routerLinkActive=" activo" *ngIf="!login">Login</a>
+          </li>
+        </div>
+
+
+      </div>
+
+    </div>
+  </nav>
+</header>
+<main>
+  <div class="wrapper">
+    <div class="router">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="container2">
+
+    <ul class="social">
+      <li><i class="fa-brands fa-instagram-square"></i><a
+          href="https://www.instagram.com/ridersroutes.s/">@ridersroutes.s</a>
+      </li>
+      <li><a href="mailto:ridersroutes@gmail.com"><i class="fas fa-envelope"></i>
+          <span>ridersroutes.s@gmail.com</span></a></li>
+    </ul>
+    <!--     password de las dos: idbootcamprr -->
+    <p>Copyright &copy; 2022 - <a href="">Aviso Legal</a> - <a href="">Cookies</a></p>
+  </div>
+</footer>

@@ -1,0 +1,19 @@
+<h1>Crea tu evento</h1>
+<div class="container">
+
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class=" px-4 py-3 ">
+        <div class="mb-3 ">
+            <label class="form-label">Titulo</label>
+            <input type="text" class="form-control" formControlName="title" placeholder="Escribe el titulo de tu evento">
+            <p class="error" *ngIf="checkError('title', 'required')">El campo nombre es requerido</p>
+        </div>
+        <div class="mb-3 ">
+            <label class="form-label">Descripcion del evento</label>
+            <textarea type="text" class="form-control" formControlName="description" name="" id="" cols="30" rows="10"></textarea>
+            <p class="error" *ngIf="checkError('coment', 'required')">El campo descripcion es requerido</p>
+        </div>
+
+        <input type="submit" value="Añadir evento" class="btn btn-dark" [disabled]="!formulario.valid" [routerLink]="['/rutas']" routerLinkActive="activo">
+
+    </form>
+</div>

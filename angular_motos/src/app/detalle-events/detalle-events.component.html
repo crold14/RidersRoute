@@ -1,0 +1,24 @@
+<h1>Chat del evento</h1>
+<div class="container">
+    <button class="btn btn-dark" [routerLink]="['/eventos']" routerLinkActive="activo">Volver a eventos</button>
+    <div class="asistentes">
+        <h3>Asistirán:</h3>
+        <p *ngFor="let asistente of arrAsistentes"> ✌ {{asistente.name}}</p>
+    </div>
+    <div class="newComentario">
+        <form action="" [formGroup]="formulario" (ngSubmit)="onSubmit()">
+            <label class="form-label">Nuevo comentario</label>
+            <textarea type="text" class="form-control" formControlName="comentario" name="" id="" cols="30" rows="3"></textarea>
+            <input type="submit" value="Enviar" class="btn btn-dark" [disabled]="!formulario.valid">
+        </form>
+
+    </div>
+    <h3>Comentarios:</h3>
+    <div *ngFor="let comentario of this.comentarios" class="comentario">
+        <p class="nickname"> {{comentario.nickname}} dice:</p>
+        <p class="fecha">{{comentario.fecha | date:'dd-MM-YYYY'}}</p>
+        <h4>{{comentario.comentario}}</h4>
+
+    </div>
+
+</div>

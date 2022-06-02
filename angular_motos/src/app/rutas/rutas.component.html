@@ -1,0 +1,28 @@
+<!-- <div class="cabecera">
+    <figure>
+        <img src="https://www.cuidamostumoto.com/sites/all/themes/cuidamostumoto/images/destacada-rutas.jpg" alt="">
+    </figure>
+</div>
+
+</div> -->
+
+
+<div class="container">
+
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" id="filtraTexto" aria-label="Search" (input)="onInput($event)">
+        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+    </form>
+    <button type="button" class="btn btn-dark" [routerLink]="['/rutas/new']" routerLinkActive="activo">CREAR UNA NUEVA
+        RUTA</button>
+    <div class="rutas">
+        <div *ngFor="let ruta of arrRutas">
+            <div class="ruta" [routerLink]="['/rutas', ruta.id]" routerLinkActive="activo">
+                <h3>{{ruta.name}}</h3>
+                <img [src]="ruta.img" alt="">
+                <button type="button" class="btn btn-dark" [routerLink]="['/rutas', ruta.id]" routerLinkActive="activo">IR A LA RUTA</button>
+            </div>
+        </div>
+
+    </div>
+</div>

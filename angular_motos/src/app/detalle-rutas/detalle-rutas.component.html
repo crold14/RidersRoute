@@ -1,0 +1,34 @@
+<div class="wrapper">
+
+    <div class="titulo">
+        <h1>{{detalle.name}}</h1>
+    </div>
+    <div class="button">
+        <button type="button" class="btn btn-dark" [routerLink]="['/rutas']" routerLinkActive="activo">VOLVER A LAS
+            RUTAS</button>
+    </div>
+    <div class="container">
+
+
+        <div class="foto">
+            <figure>
+                <img width="200" [src]="detalle.img">
+            </figure>
+        </div>
+        <div class="descripcion">
+
+            <p>Distancia: {{detalle.dist}} Km</p>
+            <p>Descripción: {{detalle.descr}}</p>
+            <p>Dificultad: {{detalle.dif}}</p>
+
+        </div>
+
+    </div>
+    <hr>
+
+    <mapa [latini]="detalle.latini" [longini]="detalle.longini" [latfin]="detalle.latfin" [longfin]="detalle.longfin">
+    </mapa>
+
+
+    <reviews></reviews>
+</div>

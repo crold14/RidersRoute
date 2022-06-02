@@ -1,0 +1,59 @@
+<h1>Actualiza tu perfil</h1>
+<div class="container">
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class=" px-4 py-3 ">
+        <div class="mb-3 ">
+            <label class="form-label">Nombre Completo</label>
+            <input type="text" class="form-control" formControlName="name">
+
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Nickname</label>
+            <input type="text" class="form-control" formControlName="nickname">
+
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Ciudad </label>
+            <input type="text" class="form-control" formControlName="city">
+
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Sobre mi </label>
+
+            <textarea type="text" class="form-control" placeholder="Escribe una breve descripcion sobre ti" formControlName="description"> {{userData.description}}</textarea>
+
+
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Edad </label>
+            <input type="number" class="form-control" formControlName="age">
+
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Email </label>
+            <input type="text" class="form-control" formControlName="email">
+
+            <p class="error" *ngIf="checkError('email', 'pattern')  ">El campo Email no tiene un formato valido</p>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Imagen </label>
+            <input type="file" class="form-control" formControlName="img" (change)="onChange($event)">
+
+        </div>
+
+        <!-- <div class="mb-3">
+            <label class="form-label">Password </label>
+            <input type="password" class="form-control" formControlName="password">
+
+        </div> -->
+
+
+
+        <input type="submit" value="Modificar" class="btn btn-dark" [disabled]="!formulario.valid">
+    </form>
+</div>

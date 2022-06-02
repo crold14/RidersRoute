@@ -1,0 +1,34 @@
+<h1>Añade una reseña</h1>
+<div class="container">
+
+    <div class="formulario">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class=" px-4 py-3 ">
+            <div class="mb-3 ">
+                <label class="form-label">Titulo</label>
+                <input type="text" class="form-control" formControlName="title">
+                <p class="error" *ngIf="checkError('title', 'required')">El campo nombre es requerido</p>
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Comentario</label>
+                <textarea type="text" class="form-control" formControlName="coment" name="" id="" cols="30" rows="3"></textarea>
+
+                <p class="error" *ngIf="checkError('coment', 'required')">El campo descripcion es requerido</p>
+            </div>
+
+            <div class="mb-3 ">
+                <label class="form-label">Valoración</label>
+                <select formControlName="val" class="form-select form-select-sm" aria-label=".form-select-sm example">
+
+                    <option value="1">Uno⭐</option>
+                    <option value="2">Dos⭐⭐</option>
+                    <option value="3">Tres⭐⭐⭐</option>
+                    <option value="4">Cuatro⭐⭐⭐⭐</option>
+                    <option value="5">Cinco⭐⭐⭐⭐⭐</option>
+                </select>
+                <p class="error" *ngIf="checkError('val', 'required')">El campo descripcion es requerido</p>
+            </div>
+
+            <input type="submit" value="Añadir reseña" class="btn btn-dark" [disabled]="!formulario.valid">
+        </form>
+    </div>
+</div>

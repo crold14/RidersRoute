@@ -1,0 +1,94 @@
+/* .cabecera img {
+    height: 200px;
+    width: 100%;
+}
+
+.cabecera {
+    width: 100%;
+    align-items: center;
+
+} */
+
+
+
+
+input {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+
+.rutas {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+    /* max-width: 1000px; */
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+
+}
+
+.rutas img {
+    width: 100%;
+    height: 100px;
+
+}
+
+.ruta {
+
+    background-color: black;
+    text-align: center;
+    border: 1px solid gold;
+    border-radius: 15px;
+    padding: 10px;
+    opacity: 1;
+    /* height: 300px; */
+
+}
+
+h3 {
+
+    color: gold;
+    text-shadow: -1px -1px 1px #aaa,
+        0px 4px 1px rgba(0, 0, 0, 0.5),
+        4px 4px 5px rgba(0, 0, 0, 0.7),
+        0px 0px 7px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+
+    margin-bottom: 50px;
+}
+
+
+button {
+    margin: 10px;
+}
+
+.d-flex input {
+
+    border: 3px solid black;
+
+}
+
+
+@media (min-width: 545px) {
+    .rutas {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media (min-width:868px) {
+    .rutas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width:1200px) {
+    .rutas {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

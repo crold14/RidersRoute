@@ -1,0 +1,71 @@
+<h1>Completa para registrar la ruta</h1>
+<div class="container1">
+    <div class="container">
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class=" px-4 py-3 ">
+            <div class="mb-3 ">
+                <label class="form-label">Nombre de la ruta</label>
+                <input type="text" class="form-control" formControlName="name" placeholder="Escribe el nombre para esta ruta">
+                <p class="error" *ngIf="checkError('name', 'required')">El campo nombre es requerido</p>
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Descripcion</label>
+                <!-- <input type="text" class="form-control" formControlName="descr"> -->
+                <textarea type="text" class="form-control" formControlName="descr" name="" id="" cols="30" rows="3"></textarea>
+                <p class="error" *ngIf="checkError('descr', 'required')">El campo descripcion es requerido</p>
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Distancia</label>
+                <input type="text" class="form-control" formControlName="dist">
+                <p class="error" *ngIf="checkError('dist', 'required')">El campo distancia es requerido</p>
+
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Imagen de la ruta</label>
+                <input type="text" class="form-control" formControlName="img">
+                <p class="error" *ngIf="checkError('img', 'required')">El campo imagen es requerido</p>
+
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Indica la dificultad</label>
+                <select formControlName="dif">
+                    <option selected></option>
+                    <option value="1">Fácil</option>
+                    <option value="2">Media</option>
+                    <option value="3">Dificil</option>
+                    <p class="error" *ngIf="checkError('dif', 'required')">El campo dificultad es requerido</p>
+                </select>
+            </div>
+
+            <h5>Indicia las cordenadas de la ruta: </h5>
+            <div class="mb-3 ">
+                <label class="form-label">Latitud inicial</label>
+                <input type="text" class="form-control" formControlName="latini">
+                <p class="error" *ngIf="checkError('latini', 'required')">El campo latitud inicial es requerido</p>
+
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Longitud inicial</label>
+                <input type="text" class="form-control" formControlName="longini">
+                <p class="error" *ngIf="checkError('longini', 'required')">El campo longitud inicial es requerido</p>
+
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Latitud final</label>
+                <input type="text" class="form-control" formControlName="latfin">
+                <p class="error" *ngIf="checkError('latfin', 'required')">El campo latitud final es requerido</p>
+
+            </div>
+            <div class="mb-3 ">
+                <label class="form-label">Longitud final</label>
+                <input type="text" class="form-control" formControlName="longfin">
+                <p class="error" *ngIf="checkError('longfin', 'required')">El campo longitud final es requerido</p>
+
+            </div>
+
+            <input type="submit" value="Añadir ruta" class="btn btn-dark" [disabled]="!formulario.valid">
+
+        </form>
+        <button type="button" class="btn btn-dark" [routerLink]="['/rutas']" routerLinkActive="activo">Volver a las
+            rutas</button>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+.reseña {
+    border: 2px solid black;
+    margin: 5px 0px;
+
+    font-size: x-large;
+    color: black;
+    border-radius: 10px;
+    background-color: lightgray;
+    padding: 10px;
+}
+
+h1 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    text-align: center;
+    color: gold;
+    text-shadow: -1px -1px 1px #aaa,
+        0px 4px 1px rgba(0, 0, 0, 0.5),
+        4px 4px 5px rgba(0, 0, 0, 0.7),
+        0px 0px 7px rgba(0, 0, 0, 0.4);
+}
+
+button {
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reseña {
+    font-size: 1em;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.fecha {
+    font-size: small;
+}

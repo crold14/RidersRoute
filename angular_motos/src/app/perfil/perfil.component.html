@@ -1,0 +1,37 @@
+<h1>Mi perfil</h1>
+<div class="container">
+
+    <div class="datos" *ngIf="userData">
+        <div class="titulo">
+            <h3>Datos</h3>
+        </div>
+        <div class="letrasimg">
+            <div class="letras">
+
+                <p>Nombre: {{userData.name}}</p>
+
+
+                <p class="email">Email: {{userData.email}}</p>
+                <p>Nickname: {{userData.nickname}}</p>
+                <p>Ciudad: {{userData.city}}</p>
+                <div class="description">
+                    <p>Sobre mi:</p>
+                    <p class="margen">{{userData.description}}</p>
+                </div>
+
+                <p>Edad: {{userData.age}}</p>
+
+            </div>
+            <div class="foto">
+                <!-- <img [src]="'https://ridersroutes.herokuapp.com/images/'+userData.img" alt=""> -->
+                <img [src]="'http://localhost:3000/images/' + userData.img" alt="">
+            </div>
+
+        </div>
+        <div class="button">
+            <button class="btn btn-dark" [routerLink]="['/editarPerfil']" routerLinkActive=" activo">Editar</button>
+            <button class="btn btn-dark" [routerLink]="['/cambiaContraseña']" routerLinkActive=" activo">Cambiar
+                contraseña</button>
+        </div>
+
+    </div>

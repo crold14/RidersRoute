@@ -1,0 +1,40 @@
+input.ng-valid.ng-touched {
+    border: 5px solid green;
+}
+
+input.ng-invalid.ng-touched {
+    border: 5px solid tomato;
+}
+
+.error {
+    color: red;
+}
+
+.mb-3 {
+    width: 500px;
+
+}
+
+.container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    width: 600px;
+    background-color: black;
+    border-radius: 15px;
+    padding: 10px;
+
+    color: gold;
+}
+
+.black {
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    color: gold;
+    text-shadow: -1px -1px 1px #aaa,
+        0px 4px 1px rgba(0, 0, 0, 0.5),
+        4px 4px 5px rgba(0, 0, 0, 0.7),
+        0px 0px 7px rgba(0, 0, 0, 0.4);
+}
